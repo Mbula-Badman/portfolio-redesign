@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Mwendwa Mbula | BBIT Student Portfolio{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="status"><i></i>Open to internships and collaboration</p>
+    <h1>I build secure software and document it clearly.</h1>
+    <p class="lede">I'm Gabriel Mwendwa Mbula, a BBIT student at DEKUT working across cybersecurity, software development, and technical writing. I graduate in May 2027.</p>
+    <div class="actions">
+      <a href="{{ url_for('projects') }}" class="btn primary">See my projects</a>
+      <a href="{{ url_for('contact') }}" class="btn">Get in touch</a>
+    </div>
+  </div>
+  <div class="frame">
+    <div class="shot">
+      <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Portrait of Mwendwa Mbula" />
+    </div>
+    <p class="tag"><b>BBIT</b> · DeKUT · Class of 2027</p>
+  </div>
+</section>
+
+<section class="rows" aria-label="What I work on">
+  <div class="row"><h3>Security and cryptography</h3><p>Threat analysis, encryption, secure communication, and ICT governance.</p></div>
+  <div class="row"><h3>Software development</h3><p>Python and full-stack web work, databases, and networking fundamentals.</p></div>
+  <div class="row"><h3>Technical writing</h3><p>Reports, proposals, research documentation, and thesis writing.</p></div>
+  <div class="row"><h3>Design and hardware</h3><p>UI mockups in Figma and Illustrator, plus CCTV, wifi, and PC repair.</p></div>
+</section>
+{% endblock %}

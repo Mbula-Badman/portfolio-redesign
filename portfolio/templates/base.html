@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Gabriel Mwendwa Mbula | Portfolio{% endblock %}</title>
+  <meta name="description" content="Gabriel Mwendwa Mbula (Prince Gabriel), BBIT student at DEKUT and founder of Holy Chalupa the brand. Graduating May 2027." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a href="{{ url_for('home') }}" class="brand">Gabriel Mbula<span>.</span></a>
+      <nav class="nav-links" aria-label="Main">
+        {% for ep, label in [('about','About'),('skills','Skills'),('projects','Projects'),('contact','Contact')] %}
+        <a href="{{ url_for(ep) }}" {% if request.endpoint == ep %}class="active" aria-current="page"{% endif %}>{{ label }}</a>
+        {% endfor %}
+        <a href="https://www.linkedin.com/in/mwendwa-mbula-46984a300" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+  <main><div class="wrap">{% block content %}{% endblock %}</div></main>
+  <footer><div class="wrap">© {{ current_year }} Gabriel Mwendwa Mbula · Prince Gabriel · Holy Chalupa the brand</div></footer>
+</body>
+</html>

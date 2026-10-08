@@ -1,0 +1,4 @@
+portfolio/.venv/
+portfolio/__pycache__/
+*.pyc
+.env
