@@ -3,8 +3,8 @@
 
 {% macro card(p) %}
 {% set tag = 'a' if p.url else 'div' %}
-<{{ tag }} class="card{% if p.url %} link{% endif %}"{% if p.url %} href="{{ p.url }}"{% if p.url.startswith('http') %} target="_blank" rel="noopener"{% endif %}{% endif %}>
-  <img src="{{ url_for('static', filename=p.img) }}" alt="{{ p.name }} thumbnail" />
+<{{ tag }} class="card{% if p.url %} link{% endif %}" data-project-category="{{ p.category }}"{% if p.url %} href="{{ p.url }}"{% if p.url.startswith('http') %} target="_blank" rel="noopener"{% endif %}{% endif %}>
+  <img src="{{ p.img }}" alt="{{ p.name }} thumbnail" loading="lazy" />
   <div class="body">
     <h3>{{ p.name }}</h3>
     <p>{{ p.desc }}</p>
@@ -16,27 +16,28 @@
 {% endmacro %}
 
 {% block content %}
-{# ==== PUT YOUR LINKS IN THE url FIELDS BELOW (GitHub or live site) ==== #}
 {% set built = [
-  {'name':'Portfolio Website','desc':'This site, built with Flask and Jinja templates.','tags':['Python','Flask','CSS'],'img':'thumb-smart-portfolio.svg','url': url_for('home')},
-  {'name':'Task Manager App','desc':'A productivity app for organizing tasks with persistent data and a clean structure.','tags':['Python','CRUD','UI'],'img':'thumb-task-manager.svg','url':''},
-  {'name':'Automation Scripts','desc':'Scripts that cut manual effort on repetitive IT tasks.','tags':['Automation','Scripting'],'img':'thumb-automation.svg','url':''}
-] %}
-{% set upcoming = [
-  {'name':'AfyaCore HMS','desc':'A hospital management system for patient records, appointments, and staff roles, built with security in mind.','tags':['Flask','Database','Security'],'img':'thumb-placeholder.svg','url':''},
-  {'name':'Makao Realty','desc':'A website for listing and selling land and property, with clear listings and enquiry options.','tags':['Web design','Listings'],'img':'thumb-placeholder.svg','url':''},
-  {'name':'Crown & Blade','desc':'A barbershop and salon website showing services, prices, and how to book.','tags':['Web design','Booking'],'img':'thumb-placeholder.svg','url':''},
-  {'name':'Sahani Kitchen','desc':'A restaurant website with menu, location, and contact details.','tags':['Web design','Menu'],'img':'thumb-placeholder.svg','url':''},
-  {'name':'Holy Chalupa Co. Website','desc':'The official website for Holy Chalupa the brand.','tags':['Branding','Web design'],'img':'thumb-placeholder.svg','url':''}
+  {'name':'Sahani Kitchen','desc':'A Kenyan restaurant experience featuring local dishes, menus, and meal ordering.','tags':['Restaurant','Food','Web design'],'category':'web','img':'https://image.thum.io/get/width/1200/crop/675/noanimate/https://sahani-kitchen.onrender.com/','url':'https://sahani-kitchen.onrender.com/'},
+  {'name':'Makao Realty','desc':'A real estate website for showcasing property and land listings.','tags':['Real estate','Listings','Web design'],'category':'web','img':'https://image.thum.io/get/width/1200/crop/675/noanimate/https://makao-realty.vercel.app/','url':'https://makao-realty.vercel.app/'},
+  {'name':'Crown & Blade','desc':'A barbershop and salon website for services, pricing, and booking.','tags':['Barbershop','Services','Booking'],'category':'web','img':'https://image.thum.io/get/width/1200/crop/675/noanimate/https://crown-and-blade-4x624yh0v-mwendwambula360-1270s-projects.vercel.app/','url':'https://crown-and-blade-4x624yh0v-mwendwambula360-1270s-projects.vercel.app/'},
+  {'name':'Holy Chalupa','desc':'The brand website for Holy Chalupa.','tags':['Branding','Web design'],'category':'web','img':'https://image.thum.io/get/width/1200/crop/675/noanimate/https://holy-chalupa-frontend.onrender.com/','url':'https://holy-chalupa-frontend.onrender.com/'},
+  {'name':'AfyaCore HMS','desc':'A healthcare management system for organizing patient and clinic workflows.','tags':['Healthcare','Management system'],'category':'app','img':'https://image.thum.io/get/width/1200/crop/675/noanimate/https://afyacore.onrender.com/','url':'https://afyacore.onrender.com/'},
+  {'name':'Automation Scripts API','desc':'An API project for automation tools and scripts.','tags':['Automation','API','Python'],'category':'backend','img':'https://image.thum.io/get/width/1200/crop/675/noanimate/https://automation-scripts-api.onrender.com/','url':'https://automation-scripts-api.onrender.com/'},
+  {'name':'Task Manager','desc':'A task management app for keeping work organized.','tags':['Productivity','Tasks','Web app'],'category':'app','img':'https://image.thum.io/get/width/1200/crop/675/noanimate/https://task-manager-vt76.onrender.com','url':'https://task-manager-vt76.onrender.com'}
 ] %}
 
-<h2>Selected work that reflects my learning.</h2>
+<h2>Selected projects</h2>
+<p class="lede project-intro">A selection of web experiences, software products, and backend tools.</p>
+<div class="project-tools">
+  <div class="filter-group" role="group" aria-label="Filter projects">
+    <button class="filter-button" type="button" data-project-filter="all" aria-pressed="true">All</button>
+    <button class="filter-button" type="button" data-project-filter="web" aria-pressed="false">Web</button>
+    <button class="filter-button" type="button" data-project-filter="app" aria-pressed="false">Apps</button>
+    <button class="filter-button" type="button" data-project-filter="backend" aria-pressed="false">Backend</button>
+  </div>
+  <p class="project-count" id="project-count" aria-live="polite">{{ built|length }} projects</p>
+</div>
 <section class="grid">
   {% for p in built %}{{ card(p) }}{% endfor %}
-</section>
-
-<h3 class="sub">Websites I'm working on next</h3>
-<section class="grid">
-  {% for p in upcoming %}{{ card(p) }}{% endfor %}
 </section>
 {% endblock %}

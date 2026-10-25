@@ -1,6 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
+
+@app.route('/profile-photo')
+def profile_photo():
+    return send_from_directory(app.root_path, 'passport.jpeg')
 
 @app.route('/')
 def home():
@@ -17,6 +21,14 @@ def skills():
 @app.route('/projects')
 def projects():
     return render_template('projects.html', current_year=2026)
+
+@app.route('/cv')
+def cv():
+    return render_template('cv.html', current_year=2026)
+
+@app.route('/services')
+def services():
+    return render_template('services.html', current_year=2026)
 
 @app.route('/contact')
 def contact():

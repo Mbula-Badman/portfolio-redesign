@@ -8,12 +8,14 @@
     <p class="lede">I'm Gabriel Mwendwa Mbula, a BBIT student at DEKUT working across cybersecurity, software development, and technical writing. I graduate in May 2027.</p>
     <div class="actions">
       <a href="{{ url_for('projects') }}" class="btn primary">See my projects</a>
+      <a href="{{ url_for('cv') }}" class="btn">View CV</a>
+      <a href="{{ url_for('services') }}" class="btn">Website rates</a>
       <a href="{{ url_for('contact') }}" class="btn">Get in touch</a>
     </div>
   </div>
   <div class="frame">
     <div class="shot">
-      <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Portrait of Mwendwa Mbula" />
+      <img src="{{ url_for('profile_photo') }}" alt="Portrait of Mwendwa Mbula" />
     </div>
     <p class="tag"><b>BBIT</b> · DeKUT · Class of 2027</p>
   </div>

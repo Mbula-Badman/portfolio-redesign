@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Website Development Rates — Gabriel Mwendwa Mbula{% endblock %}
+{% block content %}
+<p class="eyebrow">Website development</p>
+<h1 class="services-title">Clear starting rates. Built around your goals.</h1>
+<p class="lede services-intro">Estimates in Kenyan shillings for design and development. Every project gets a written scope and a final quote before work begins.</p>
+
+<section class="rate-grid" aria-label="Website development rate card">
+  <article class="rate-card">
+    <p class="rate-label">01 / Launch</p>
+    <h2>Landing page</h2>
+    <p class="rate-price">KSh 25,000–45,000</p>
+    <p>A polished single-page site for a product, service, event, or personal brand.</p>
+    <ul><li>Responsive custom layout</li><li>Contact and call-to-action sections</li><li>Basic search metadata</li></ul>
+  </article>
+  <article class="rate-card rate-featured">
+    <p class="rate-label">02 / Business</p>
+    <h2>Business website</h2>
+    <p class="rate-price">KSh 55,000–95,000</p>
+    <p>A multi-page presence for a growing business that needs to explain, showcase, and convert.</p>
+    <ul><li>Up to five pages</li><li>Responsive design and inquiry flow</li><li>Basic search and social sharing setup</li></ul>
+  </article>
+  <article class="rate-card">
+    <p class="rate-label">03 / Commerce</p>
+    <h2>Online store</h2>
+    <p class="rate-price">KSh 120,000–220,000</p>
+    <p>A product catalogue and purchasing flow for businesses ready to sell online.</p>
+    <ul><li>Product and category pages</li><li>Cart and checkout integration</li><li>Order workflow setup</li></ul>
+  </article>
+  <article class="rate-card">
+    <p class="rate-label">04 / Custom</p>
+    <h2>Web app or API</h2>
+    <p class="rate-price">From KSh 180,000</p>
+    <p>Custom workflows, dashboards, integrations, and backend services priced after discovery.</p>
+    <ul><li>Requirements and technical scope</li><li>Application or API development</li><li>Testing and deployment support</li></ul>
+  </article>
+  <article class="rate-card">
+    <p class="rate-label">05 / Ongoing</p>
+    <h2>Care and updates</h2>
+    <p class="rate-price">KSh 12,000–25,000 / month</p>
+    <p>Ongoing help keeping an existing site current, healthy, and working as expected.</p>
+    <ul><li>Small content and layout updates</li><li>Routine checks and issue triage</li><li>Monthly support allowance agreed in advance</li></ul>
+  </article>
+</section>
+
+<section class="rate-notes">
+  <h2>What affects the final quote?</h2>
+  <p>Final pricing depends on page count, integrations, content readiness, and custom functionality. Domain registration, hosting, paid plugins, payment-provider fees, and third-party subscriptions are separate. The project scope, delivery schedule, and included revisions are agreed before work starts.</p>
+  <a class="btn primary" href="{{ url_for('contact') }}">Discuss a project</a>
+</section>
+{% endblock %}

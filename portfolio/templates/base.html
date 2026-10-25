@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,12 +15,19 @@
   <header class="topbar">
     <div class="wrap">
       <a href="{{ url_for('home') }}" class="brand">Gabriel Mbula<span>.</span></a>
-      <nav class="nav-links" aria-label="Main">
-        {% for ep, label in [('about','About'),('skills','Skills'),('projects','Projects'),('contact','Contact')] %}
-        <a href="{{ url_for(ep) }}" {% if request.endpoint == ep %}class="active" aria-current="page"{% endif %}>{{ label }}</a>
-        {% endfor %}
-        <a href="https://www.linkedin.com/in/mwendwa-mbula-46984a300" target="_blank" rel="noopener">LinkedIn</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="nav-links" aria-label="Main">
+          {% for ep, label in [('about','About'),('skills','Skills'),('projects','Projects'),('services','Rates'),('cv','CV'),('contact','Contact')] %}
+          <a href="{{ url_for(ep) }}" {% if request.endpoint == ep %}class="active" aria-current="page"{% endif %}>{{ label }}</a>
+          {% endfor %}
+          <a href="https://www.linkedin.com/in/mwendwa-mbula-46984a300" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+        <label class="theme-switch" for="theme-toggle">
+          <input id="theme-toggle" type="checkbox" aria-label="Use dark theme" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Dark theme</span>
+        </label>
+      </div>
     </div>
   </header>
   <main><div class="wrap">{% block content %}{% endblock %}</div></main>
