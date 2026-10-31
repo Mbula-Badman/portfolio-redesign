@@ -1,6 +1,21 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, abort, render_template, send_from_directory
 
 app = Flask(__name__)
+
+CERTIFICATES = {
+    'ethical-hacker': 'Ethical_Hacker_certificate_mwendwa-mbula23-students-dkut-ac-ke_c5eb70c2-7596-4e10-a2f7-d26a16b339f6.pdf',
+    'networking-essentials': 'Network_Technician_Career_Path_certificate_mwendwa-mbula23-students-dkut-ac-ke_0eda3734-2b31-4fa2-8310-8198522e46ea.pdf',
+    'linux-essentials': '_certificate_mwendwa-mbula23-students-dkut-ac-ke_bb4a01b3-4dc0-4315-bdf0-5b07d2c0d005.pdf',
+}
+
+
+@app.route('/certificates/<certificate>')
+def certificate(certificate):
+    filename = CERTIFICATES.get(certificate)
+    if filename is None:
+        abort(404)
+    return send_from_directory(app.root_path, filename, mimetype='application/pdf')
+
 
 @app.route('/profile-photo')
 def profile_photo():

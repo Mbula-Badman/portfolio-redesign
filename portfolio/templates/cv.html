@@ -6,7 +6,7 @@
     <div>
       <p class="eyebrow">Curriculum vitae</p>
       <h1>Gabriel Mwendwa Mbula</h1>
-      <p class="cv-role">BBIT student · Software development · Cybersecurity</p>
+      <p class="cv-role">BBIT professional · Software development · Cybersecurity</p>
     </div>
     <button class="btn primary" type="button" data-print-cv>Download / print CV</button>
   </header>
@@ -18,14 +18,35 @@
 
   <section class="cv-section">
     <h2>Professional profile</h2>
-    <p>Business Information Technology student at Dedan Kimathi University of Technology with hands-on project experience across web development, software tools, cybersecurity fundamentals, and technical documentation. Focused on practical problem-solving, clear communication, and building usable digital products.</p>
+    <p>Business Information Technology professional with hands-on project experience across web development, software tools, cybersecurity, and technical documentation. Focused on practical problem-solving, clear communication, and building usable digital products.</p>
   </section>
 
   <section class="cv-section">
     <h2>Education</h2>
     <div class="cv-entry">
       <div><h3>Bachelor of Business Information Technology</h3><p>Dedan Kimathi University of Technology (DeKUT)</p></div>
-      <p class="cv-date">Expected May 2027</p>
+    </div>
+  </section>
+
+  <section class="cv-section" id="certifications">
+    <h2>Certifications</h2>
+    <div class="cv-entry">
+      <div>
+        <h3><a href="{{ url_for('certificate', certificate='ethical-hacker') }}" target="_blank" rel="noopener">Ethical Hacker</a></h3>
+        <p>Cisco Networking Academy · Completed 31 October 2026</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <h3><a href="{{ url_for('certificate', certificate='networking-essentials') }}" target="_blank" rel="noopener">Networking Essentials</a></h3>
+        <p>DeKUT through Cisco Networking Academy · Completed 25 March 2024</p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <h3><a href="{{ url_for('certificate', certificate='linux-essentials') }}" target="_blank" rel="noopener">Linux Essentials</a></h3>
+        <p>DeKUT through Cisco Networking Academy · Completed 25 July 2025</p>
+      </div>
     </div>
   </section>
 
