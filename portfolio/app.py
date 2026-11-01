@@ -6,6 +6,17 @@ CERTIFICATES = {
     'ethical-hacker': 'Ethical_Hacker_certificate_mwendwa-mbula23-students-dkut-ac-ke_c5eb70c2-7596-4e10-a2f7-d26a16b339f6.pdf',
     'networking-essentials': 'Network_Technician_Career_Path_certificate_mwendwa-mbula23-students-dkut-ac-ke_0eda3734-2b31-4fa2-8310-8198522e46ea.pdf',
     'linux-essentials': '_certificate_mwendwa-mbula23-students-dkut-ac-ke_bb4a01b3-4dc0-4315-bdf0-5b07d2c0d005.pdf',
+    'cyber-threat-management': 'Cyber_Threat_Management_certificate_mwendwa-mbula23-students-dkut-ac-ke_452097ba-25e3-459b-9a4e-4326bc2f278d.pdf',
+    'managing-a-business-venture': 'Managing_a_Business_Venture_certificate_mwendwa-mbula23-students-dkut-ac-ke_dbf1a1eb-195e-4519-8546-c21db96867d1.pdf',
+    'ai-for-beginners': 'AI for Beginners.pdf',
+    'agile-project-management': 'Agile Project Management.pdf',
+    'customer-experience-cx': 'Customer Experience (CX) for Business Success.pdf',
+    'cybersecurity-awareness': 'Introduction to Cybersecurity Awareness.pdf',
+    'business-email': 'Business Email.pdf',
+    'effective-leadership': 'Effective Leadership.pdf',
+    'selling-online': 'Selling Online.pdf',
+    'resume-writing-job-interviewing': 'Resume Writing and Job Interviewing.pdf',
+    'starting-small-business': 'Starting a Small Business.pdf',
 }
 
 
