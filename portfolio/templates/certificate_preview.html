@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}{{ certificate_title }} certificate — Gabriel Mwendwa Mbula{% endblock %}
+{% block content %}
+<section class="cv-page certificate-page">
+  <header class="cv-heading">
+    <div>
+      <p class="eyebrow">Certificate preview</p>
+      <h1>{{ certificate_title }}</h1>
+      <p class="cv-role">View the document here, or download a copy.</p>
+    </div>
+    <div class="certificate-actions">
+      <a class="btn primary" href="{{ url_for('certificate', certificate=certificate) }}" download>Download certificate</a>
+      <a class="btn" href="{{ url_for('cv') }}#certifications">Back to CV</a>
+    </div>
+  </header>
+  <iframe class="certificate-document"
+    src="{{ url_for('certificate', certificate=certificate) }}#view=FitH"
+    title="Preview of {{ certificate_title }} certificate">
+    <p>Your browser cannot display this PDF inline. <a href="{{ url_for('certificate', certificate=certificate) }}">Open or download the certificate</a>.</p>
+  </iframe>
+</section>
+{% endblock %}

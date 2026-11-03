@@ -19,6 +19,16 @@ CERTIFICATES = {
     'starting-small-business': 'Starting a Small Business.pdf',
 }
 
+PORTFOLIO_PHOTOS = {
+    'electronics-workspace': 'WhatsApp Image 2026-11-03 at 11.02.39 AM.jpeg',
+    'technology-shop': 'WhatsApp Image 2026-11-03 at 11.04.42 AM.jpeg',
+}
+
+CERTIFICATE_TITLES = {
+    'ai-for-beginners': 'AI for Beginners',
+    'customer-experience-cx': 'Customer Experience (CX) for Business Success',
+}
+
 
 @app.route('/certificates/<certificate>')
 def certificate(certificate):
@@ -26,6 +36,27 @@ def certificate(certificate):
     if filename is None:
         abort(404)
     return send_from_directory(app.root_path, filename, mimetype='application/pdf')
+
+
+@app.route('/certificate-preview/<certificate>')
+def certificate_preview(certificate):
+    if certificate not in CERTIFICATES:
+        abort(404)
+    title = CERTIFICATE_TITLES.get(certificate, certificate.replace('-', ' ').title())
+    return render_template(
+        'certificate_preview.html',
+        certificate=certificate,
+        certificate_title=title,
+        current_year=2026,
+    )
+
+
+@app.route('/portfolio-photos/<photo>')
+def portfolio_photo(photo):
+    filename = PORTFOLIO_PHOTOS.get(photo)
+    if filename is None:
+        abort(404)
+    return send_from_directory(app.root_path, filename, mimetype='image/jpeg')
 
 
 @app.route('/profile-photo')

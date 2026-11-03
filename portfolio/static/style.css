@@ -59,6 +59,15 @@ h3{font-size:1.2rem;font-weight:700}
 @keyframes scan{to{top:110%}}
 .tag{position:absolute;left:1.2rem;bottom:1.2rem;background:rgba(2,10,28,.85);border:1px solid var(--line);padding:.5rem .8rem;border-radius:var(--r);font-size:.85rem;color:var(--ice)}
 .tag b{color:var(--amber);font-weight:700}
+.attachment-section{margin-top:clamp(3.5rem,8vw,6rem)}
+.attachment-heading{margin-bottom:1.5rem}
+.attachment-heading .eyebrow{margin-bottom:.4rem;color:var(--amber);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.attachment-heading h2{margin-bottom:.7rem}
+.attachment-heading>p:last-child{max-width:60ch;color:var(--muted)}
+.attachment-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem}
+.attachment-gallery figure{overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.attachment-gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 38%}
+.attachment-gallery figcaption{padding:.8rem 1rem;color:var(--muted);font-size:.92rem}
 /* ruled lists */
 .rows{border-top:1px solid var(--line);margin-top:clamp(3.5rem,8vw,6rem)}
 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:1rem 3rem;padding:1.5rem 0;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
@@ -215,3 +224,6 @@ footer{border-color:var(--line);color:var(--muted)}
   .cv-contact{padding:10px 0}
   a{text-decoration:none}
 }
+.certificate-actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.certificate-document{display:block;width:100%;height:min(78vh,900px);min-height:560px;margin-top:1.5rem;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+@media(max-width:600px){.attachment-gallery{grid-template-columns:1fr}.certificate-document{height:70vh;min-height:420px}}
