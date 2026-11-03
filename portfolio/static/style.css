@@ -227,3 +227,30 @@ footer{border-color:var(--line);color:var(--muted)}
 .certificate-actions{display:flex;flex-wrap:wrap;gap:.7rem}
 .certificate-document{display:block;width:100%;height:min(78vh,900px);min-height:560px;margin-top:1.5rem;border:1px solid var(--line);border-radius:var(--r);background:#fff}
 @media(max-width:600px){.attachment-gallery{grid-template-columns:1fr}.certificate-document{height:70vh;min-height:420px}}
+.contact-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);align-items:center;gap:clamp(2rem,6vw,5rem)}
+.contact-details h2{margin-bottom:1.2rem}
+.contact-details .lede{margin-bottom:1.4rem}
+.contact-portrait{width:100%;max-width:420px;justify-self:end;margin:0;padding:.6rem;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);box-shadow:var(--shadow)}
+.contact-portrait img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 25%;border-radius:3px}
+.contact-portrait figcaption{padding:.75rem .4rem .2rem;color:var(--muted);font-size:.9rem;text-align:center}
+.swipe-hint{display:none;margin-top:.4rem;font-size:.82rem}
+.btn,.copy-email,.filter-button{min-height:44px}
+@media(max-width:860px){.contact-layout{grid-template-columns:1fr;gap:2rem}.contact-portrait{justify-self:start;max-width:360px}}
+@media(max-width:680px){
+  body{background-attachment:scroll}
+  main{padding:2rem 0 3rem}
+  .topbar .wrap{align-items:flex-start}
+  .header-actions{min-width:0;align-items:center;gap:8px}
+  .nav-links{flex:1;min-width:0;flex-wrap:nowrap;justify-content:flex-start;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;white-space:nowrap}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{flex:none}
+  .theme-switch{flex:none;min-height:44px}
+  .hero,.split{gap:2rem}
+  h1{font-size:clamp(2.2rem,10vw,2.7rem)}
+  h2{font-size:1.8rem}
+  .contact-layout{gap:2rem}
+  .contact-portrait{max-width:min(100%,360px)}
+  .attachment-gallery{grid-template-columns:1fr}
+  .certificate-document{height:70vh;min-height:420px}
+  .swipe-hint{display:block}
+}

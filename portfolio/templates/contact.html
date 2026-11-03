@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% block title %}Contact — Gabriel Mwendwa Mbula{% endblock %}
 {% block content %}
-<h2>Let's build something meaningful together.</h2>
-<p class="lede" style="margin-bottom:2rem">I'm available for professional projects and collaboration. For business enquiries, reach Holy Chalupa the brand.</p>
-<div class="mail-row">
-  <a class="mail" href="mailto:mwendwambula360@gmail.com">mwendwambula360@gmail.com</a>
-  <button class="copy-email" type="button" data-copy-email="mwendwambula360@gmail.com">Copy email</button>
-</div>
-<p class="copy-status" id="copy-status" aria-live="polite"></p>
-<div class="actions">
-  <a href="mailto:mwendwambula360@gmail.com" class="btn primary">Email me</a>
-  <a href="https://wa.me/254705845568" class="btn" target="_blank" rel="noopener">WhatsApp 0705 845 568</a>
-  <a href="https://www.linkedin.com/in/mwendwa-mbula-46984a300" class="btn" target="_blank" rel="noopener">LinkedIn</a>
-</div>
+<section class="contact-layout">
+  <div class="contact-details">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Let's build something meaningful together.</h2>
+    <p class="lede">I'm available for professional projects and collaboration. For business enquiries, reach Holy Chalupa the brand.</p>
+    <div class="mail-row">
+      <a class="mail" href="mailto:mwendwambula360@gmail.com">mwendwambula360@gmail.com</a>
+      <button class="copy-email" type="button" data-copy-email="mwendwambula360@gmail.com">Copy email</button>
+    </div>
+    <p class="copy-status" id="copy-status" aria-live="polite"></p>
+    <div class="actions">
+      <a href="mailto:mwendwambula360@gmail.com" class="btn primary">Email me</a>
+      <a href="https://wa.me/254705845568" class="btn" target="_blank" rel="noopener">WhatsApp 0705 845 568</a>
+      <a href="https://www.linkedin.com/in/mwendwa-mbula-46984a300" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <figure class="contact-portrait">
+    <img src="{{ url_for('portfolio_photo', photo='professional-portrait') }}" alt="Portrait of Gabriel Mwendwa Mbula" />
+    <figcaption>Gabriel Mwendwa Mbula · Prince Gabriel</figcaption>
+  </figure>
+</section>
 {% endblock %}

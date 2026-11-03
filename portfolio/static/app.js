@@ -26,6 +26,42 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  const pageOrder = ['/', '/about', '/skills', '/projects', '/services', '/cv', '/contact'];
+  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  const currentPageIndex = pageOrder.indexOf(currentPath);
+  let touchStart = null;
+
+  if (currentPageIndex !== -1 && window.matchMedia('(max-width: 680px)').matches) {
+    document.addEventListener('touchstart', (event) => {
+      if (event.touches.length !== 1 || event.target.closest('.nav-links, a, button, input, textarea, select, iframe, [contenteditable="true"]')) {
+        touchStart = null;
+        return;
+      }
+
+      const touch = event.touches[0];
+      touchStart = { x: touch.clientX, y: touch.clientY };
+    }, { passive: true });
+
+    document.addEventListener('touchend', (event) => {
+      const start = touchStart;
+      touchStart = null;
+      if (!start || event.changedTouches.length !== 1) return;
+
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - start.x;
+      const deltaY = touch.clientY - start.y;
+
+      if (Math.abs(deltaX) < 70 || Math.abs(deltaX) < Math.abs(deltaY) * 1.3) return;
+
+      const nextPageIndex = currentPageIndex + (deltaX < 0 ? 1 : -1);
+      if (pageOrder[nextPageIndex]) window.location.assign(pageOrder[nextPageIndex]);
+    }, { passive: true });
+
+    document.addEventListener('touchcancel', () => {
+      touchStart = null;
+    }, { passive: true });
+  }
+
   const filterButtons = document.querySelectorAll('[data-project-filter]');
   const projectCards = document.querySelectorAll('[data-project-category]');
   const projectCount = document.querySelector('#project-count');

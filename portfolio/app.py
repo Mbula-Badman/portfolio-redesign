@@ -22,6 +22,7 @@ CERTIFICATES = {
 PORTFOLIO_PHOTOS = {
     'electronics-workspace': 'WhatsApp Image 2026-11-03 at 11.02.39 AM.jpeg',
     'technology-shop': 'WhatsApp Image 2026-11-03 at 11.04.42 AM.jpeg',
+    'professional-portrait': 'WhatsApp Image 2026-11-03 at 11.45.27 AM.jpeg',
 }
 
 CERTIFICATE_TITLES = {
